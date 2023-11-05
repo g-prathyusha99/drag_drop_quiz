@@ -1,0 +1,96 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Fun font */
+    background-color: #E6E6FA; /* Lavender background */
+}
+
+#dhtmlgoodies_dragDropContainer { /* Main container for this script */
+    width: 100%; 
+    min-height: 450px;
+    margin: 0 auto; /* Center the main container */
+    background-color: #FFF;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Add shadow for depth */
+    padding-bottom: 0; /* Remove extra space at the bottom */
+}
+
+
+/* General rules for all <ul> */
+#dhtmlgoodies_dragDropContainer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Align items to the top */
+}
+
+/* Movable items, i.e. <LI> */
+#dhtmlgoodies_dragDropContainer li, #dragContent li, li#indicateDestination {
+    background-color: #DDA0DD; /* Plum color */
+    border: 1px solid #8A2BE2; /* BlueViolet color */
+    border-radius: 5px; /* Rounded corners for <li> */
+    cursor: pointer; /* Change cursor to indicate moving */
+    padding: 5px;
+    margin: 3px 0; /* Space between items */
+    font-size: 1em; /* Increase font size for fun */
+}
+
+#dhtmlgoodies_dragDropContainer ul li.correctAnswer { /* Correctly moved item */
+    background-color: #32CD32; /* LimeGreen color for correct answers */
+    color: #FFF;
+}
+
+#dhtmlgoodies_dragDropContainer ul li.wrongAnswer { /* Item moved to wrong box */
+    background-color: #FF0000; /* Red color for wrong answers */
+    color: #FFF;
+}
+
+li#indicateDestination { /* Box indicating where content will be dropped */
+    border: 1px dotted #8A2BE2; /* BlueViolet color */
+    background-color: #FFF;
+}
+
+/* Left column "Available students" */
+#dhtmlgoodies_listOfItems {
+    float: left;
+    width: 160px; /* Adjusted width */
+    margin-right: 10px; /* Space between the list and the right containers */
+}
+
+/* Right column DIV */
+#dhtmlgoodies_mainContainer {
+    float: left;
+    width: calc(100% - 180px); /* Adjust width to take into account the left column */
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: space-around; /* Space out the child elements */
+}
+
+#dhtmlgoodies_mainContainer div { /* Parent <div> of small boxes */
+    border: 1px solid #8A2BE2; /* BlueViolet color */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding inside the boxes */
+    flex-grow: 1; /* Allow boxes to grow and fill space */
+    margin: 0 5px; /* Margin between boxes */
+}
+
+#dhtmlgoodies_mainContainer ul { /* Small box in right column, i.e. <ul> */
+    min-height: 50px; /* Minimum height for <ul> elements */
+    margin-bottom: 0; /* Align items to the bottom */
+    padding: 5px; /* Padding inside the boxes */
+}
+
+#dhtmlgoodies_mainContainer div p { /* Heading above small boxes */
+    background-color: #6A0DAD; /* Purple color */
+    color: #FFF; /* White text color */
+    padding: 5px;
+    border-radius: 5px; /* Rounded corners */
+    margin: 0 0 5px 0; /* Space below the header */
+}
+
+#dragContent { /* Drag container */
+    display: none; /* Initially hidden */
+    position: absolute;
+    z-index: 1000; /* Make sure it's above other items */
+}
+
+#dragDropIndicator { /* DIV for the small arrow */
+    display: none; /* Hide the arrow */
+}
+
+.style1 { color: #FF0000; } /* Keep red color for style1 if needed */
